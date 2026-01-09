@@ -22,7 +22,7 @@
             align-items: center;
             min-height: 100vh;
             padding: 20px;
-            background-color: #0d1117; /* Dark background like the reference image border */
+            background-color: #0d1117;
         }
 
         .landing-card {
@@ -36,7 +36,7 @@
         }
 
         .landing-title {
-            color: #1b5e20; /* Dark Green */
+            color: #1b5e20;
             font-size: 32px;
             font-weight: bold;
             margin: 0;
@@ -64,7 +64,7 @@
         }
 
         .info-table th {
-            background-color: #00897b; /* Teal Green Header */
+            background-color: #00897b;
             color: white;
             padding: 10px;
             font-weight: normal;
@@ -77,11 +77,10 @@
             background: white;
         }
         
-        /* Alternate row colors for landing table if needed, currently white to match image */
         .info-table tr:last-child td { border-bottom: none; }
 
         .btn-start {
-            background-color: #2e7d32; /* Green Button */
+            background-color: #2e7d32;
             color: white;
             border: none;
             width: 100%;
@@ -137,7 +136,7 @@
         }
         .machine-container {
             max-width: 600px;
-            margin: 10px auto;
+            margin: 20px auto; /* Increased spacing between machines */
             background: white;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
             padding-bottom: 10px;
@@ -314,17 +313,20 @@
     </div>
 
 
-    <header>
-        <div class="main-header">
-            कल्याण डोंबिवली महानगरपालिका सार्वत्रिक निवडणूक २०२६ - नगरसेवक (बोर्ड-आधारित)<br>
-            <span style="color:red">डमी मतदान यंत्र</span>
-        </div>
-        <div class="marquee-strip" style="text-align: center;">
-            नगरसेवक पदासाठी मतदान करा
-        </div>
-    </header>
+    <div id="mainApp" class="hidden">
+        
+        <header>
+            <div class="main-header">
+                कल्याण डोंबिवली महानगरपालिका सार्वत्रिक निवडणूक २०२६ - नगरसेवक (बोर्ड-आधारित)<br>
+                <span style="color:red">डमी मतदान यंत्र</span>
+            </div>
+            <div class="marquee-strip" style="text-align: center;">
+                नगरसेवक पदासाठी मतदान करा
+            </div>
+        </header>
 
         <div class="machine-wrapper">
+            
             <div class="machine-container">
                 <div class="machine-title">मशीन 1</div>
                 <table class="ballot-table">
@@ -340,9 +342,6 @@
                     </thead>
                     <tbody id="section-a" class="bg-yellow">
                         <tr><td colspan="6" class="section-header">प्रभाग क्र. १० अ</td></tr>
-                    </tbody>
-                    <tbody id="section-b" class="bg-pink">
-                        <tr><td colspan="6" class="section-header" style="background: #f8bbd0;">प्रभाग क्र. १०   ब</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -360,14 +359,50 @@
                             <th style="width:15%">बटण</th>
                         </tr>
                     </thead>
-                    <tbody id="section-c" class="bg-yellow">
-                        <tr><td colspan="6" class="section-header">प्रभाग क्र. १० क</td></tr>
-                    </tbody>
-                    <tbody id="section-d" class="bg-blue">
-                        <tr><td colspan="6" class="section-header" style="background: #bbdefb;">प्रभाग क्र. १०   ड</td></tr>
+                    <tbody id="section-b" class="bg-pink">
+                        <tr><td colspan="6" class="section-header" style="background: #f8bbd0;">प्रभाग क्र. १०  ब</td></tr>
                     </tbody>
                 </table>
             </div>
+
+            <div class="machine-container">
+                <div class="machine-title">मशीन 3</div>
+                <table class="ballot-table">
+                    <thead>
+                        <tr>
+                            <th style="width:10%">अ.क्र.</th>
+                            <th style="width:45%">उमेदवाराचे नाव</th>
+                            <th style="width:10%">फोटो</th>
+                            <th style="width:10%">चिन्ह</th>
+                            <th style="width:10%">बल्ब</th>
+                            <th style="width:15%">बटण</th>
+                        </tr>
+                    </thead>
+                    <tbody id="section-c" class="bg-yellow">
+                        <tr><td colspan="6" class="section-header">प्रभाग क्र. १० क</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="machine-container">
+                <div class="machine-title">मशीन 4</div>
+                <table class="ballot-table">
+                    <thead>
+                        <tr>
+                            <th style="width:10%">अ.क्र.</th>
+                            <th style="width:45%">उमेदवाराचे नाव</th>
+                            <th style="width:10%">फोटो</th>
+                            <th style="width:10%">चिन्ह</th>
+                            <th style="width:10%">बल्ब</th>
+                            <th style="width:15%">बटण</th>
+                        </tr>
+                    </thead>
+                    <tbody id="section-d" class="bg-blue">
+                        <tr><td colspan="6" class="section-header" style="background: #bbdefb;">प्रभाग क्र. १०  ड</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
         </div>
 
         <div style="text-align: center; font-size: 12px; color: #666; padding: 10px;">
@@ -399,18 +434,18 @@
 
     <script>
         // --- Placeholders for Images ---
+        // Ensure these files exist in your folder
         const SYMBOL_CLOCK = "Shivsenalogo.jpg"; 
-         PHOTO_WOMAN1 = "aumedvar.jpg";
-         PHOTO_MAN1 = "bumedvar.jpg";
-         PHOTO_WOMAN2 = "cumedvar.jpg";
-         PHOTO_MAN2 = "dumedvar.jpg";
+        const PHOTO_WOMAN1 = "aumedvar.jpg";
+        const PHOTO_MAN1 = "bumedvar.jpg";
+        const PHOTO_WOMAN2 = "cumedvar.jpg";
+        const PHOTO_MAN2 = "dumedvar.jpg";
 
 
         // --- Candidates Data (Matches the Ballot) ---
         const dataA = [
             { id: 1, name: "कांबळे माया देवानंद", photo: PHOTO_WOMAN1, symbol: SYMBOL_CLOCK, active: true }, 
             { id: 2 }, { id: 3 }, { id: 4 }, { id: 5 }, { id: 6 },
-            
         ];
 
         const dataB = [
@@ -422,7 +457,6 @@
         const dataC = [
             { id: 1, name: "काळे दर्शना समीप", photo: PHOTO_WOMAN2, symbol: SYMBOL_CLOCK, active: true  }, 
             { id: 2 }, { id: 3 }, { id: 4 }, { id: 5 }, { id: 6 },
-            
         ];
 
         const dataD = [
@@ -472,7 +506,7 @@
         }
 
         function init() {
-            // Render all sections
+            // Render all sections to their specific machine tables
             const tbodyA = document.getElementById('section-a');
             dataA.forEach(c => tbodyA.appendChild(createRow(c, 'A')));
 
@@ -540,5 +574,4 @@
 
     </script>
 </body>
-
 </html>
